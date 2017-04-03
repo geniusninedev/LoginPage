@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_id">MyApplication</string>
+    <string name="app_name">Login page</string>
+    <string name="action_logout"> Log Out</string>
+    <string name="facebook_app_id">1832788870296431</string>
+
+    <string name="loading">Loading</string>
+    <string name="googleloginText">Sign In</string>
+    <string name="facebook_data">FacebookUser</string>
+    <string name="email_data">EmailUser</string>
+    <string name="google_data">GoogleUser</string>
+</resources>
