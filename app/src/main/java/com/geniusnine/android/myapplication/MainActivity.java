@@ -18,13 +18,15 @@ import com.firebase.client.Firebase;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import static android.R.attr.type;
+
 
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "LoginActivity";
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
-
+    private FirebaseUser mUser;
 
 
     @Override
@@ -58,7 +60,11 @@ public class MainActivity extends AppCompatActivity {
 
 
                 } else {
+
+
                 }
+
+
 
             }
         };

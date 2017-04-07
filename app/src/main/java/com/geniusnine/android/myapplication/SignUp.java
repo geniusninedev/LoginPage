@@ -170,7 +170,7 @@ public class SignUp extends AppCompatActivity {
                         // the auth state listener will be notified and logic to handle the
                         // signed in user can be handled in the listener.
                         if (!task.isSuccessful()) {
-                            Toast.makeText(SignUp.this, "Already Registered! Sign In With Google.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(SignUp.this, "Already Registered!", Toast.LENGTH_SHORT).show();
                         } else {
                             onAuthenticationSucess(task.getResult().getUser());
                         }

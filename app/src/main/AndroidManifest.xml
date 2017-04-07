@@ -38,7 +38,10 @@
             android:label="Login"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:windowSoftInputMode="stateHidden|adjustResize"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar" >
+
+
+            </activity>
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
