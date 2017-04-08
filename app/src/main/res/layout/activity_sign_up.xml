@@ -140,7 +140,7 @@
                 android:padding="10dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
-                android:text="Register Now"
+                android:text="Sign Up"
                 android:textStyle="bold"
                 android:textColor="@color/colorText"/>
 
