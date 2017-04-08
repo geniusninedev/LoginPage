@@ -55,7 +55,7 @@
         <activity
             android:name=".SignUp"
             android:windowSoftInputMode="stateHidden|adjustResize"
-            android:label="Register"
+            android:label="Sign Up"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>
