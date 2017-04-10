@@ -194,7 +194,7 @@ public class SignUp extends AppCompatActivity {
     private void saveNewUser(String userId, String name, String phone, String email, String password,String gender) {
         User user = new User(userId,name,phone,email,password,gender);
 
-        mRef.child(getString(R.string.app_id)).child("Users").child(getString(R.string.email_data)).child(userId).setValue(user);
+        mRef.child(getString(R.string.app_id)).child("Users").child(userId).setValue(user);
     }
 
 
