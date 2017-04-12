@@ -86,29 +86,7 @@ public class Login extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //AuthListener to check whether user is Login Or Not
-      /*  mAuthListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-               FirebaseUser mUser = firebaseAuth.getCurrentUser();
 
-                if (mUser != null) {
-                    if (mUser.isEmailVerified() ) {
-                        Toast.makeText(Login.this, "You are in =)", Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                        startActivity(intent);
-                        finish();
-                    }
-
-                } else {
-
-                    // User is signed out
-                    Log.d(TAG, "onAuthStateChanged:signed_out");
-                }
-
-            }
-        };
-*/
         //Resetting Password of Registered Email ID
         resetPassword = (TextView)findViewById(R.id.textViewForgetPass);
         resetPassword.setOnClickListener(new View.OnClickListener() {
@@ -213,19 +191,6 @@ public class Login extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-       // mAuth.addAuthStateListener(mAuthListener);
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-      /*  if (mAuthListener != null) {
-            mAuth.removeAuthStateListener(mAuthListener);
-        }*/
-    }
 
 
     //FaceBook and Google OnActivityResult
