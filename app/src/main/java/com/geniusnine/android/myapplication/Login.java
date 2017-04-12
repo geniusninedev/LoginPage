@@ -308,17 +308,16 @@ public class Login extends AppCompatActivity {
                         // signed in user can be handled in the listener.
                         if (!task.isSuccessful()) {
                             Log.w(TAG, "signInWithEmail", task.getException());
-
+                            //  findViewById(R.id.button_sign_in).setEnabled(false);
                             user = new User();
-                            if (password != user.getPassword() || email != user.getEmail()) {
+                            if (password != user.getPassword() || email != user.getEmail()){
                                 Toast.makeText(Login.this, "Incorrect Email or Password? If Not Registered? Register First!", Toast.LENGTH_SHORT).show();
-                            }
-
-
+                        }
 
                         } else {
                             FirebaseUser mUser = mAuth.getCurrentUser();
-                            if (mUser.isEmailVerified()) {
+
+                            if ( mUser.isEmailVerified()) {
                                 Toast.makeText(Login.this,"You are in =)",Toast.LENGTH_LONG).show();
 
                                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
@@ -327,19 +326,13 @@ public class Login extends AppCompatActivity {
                             }
 
                             else {
-
-                                //---- HERE YOU SEND THE EMAIL
-                              //  mUser.sendEmailVerification();
                                 Toast.makeText(Login.this,"Verify your email first...",Toast.LENGTH_LONG).show();
+                                FirebaseAuth.getInstance().signOut();
                             }
-
-
                         }
-
                         hideProgressDialog();
                     }
                 });
-
     }
 
 

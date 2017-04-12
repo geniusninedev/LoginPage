@@ -15,8 +15,11 @@ import android.widget.Toast;
 
 import com.facebook.login.LoginManager;
 import com.firebase.client.Firebase;
+import com.google.firebase.auth.EmailAuthProvider;
+import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.GoogleAuthProvider;
 
 import static android.R.attr.type;
 
@@ -46,16 +49,17 @@ public class MainActivity extends AppCompatActivity {
     ///Authentication with firebase
     private void authenticate() {
         mAuth = FirebaseAuth.getInstance();
+        mUser = mAuth.getCurrentUser();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if (firebaseAuth.getCurrentUser() == null ) {
 
-                        Log.e("ForumMainActivity:", "User was null so directed to Login activity");
-                        Intent loginIntent = new Intent(MainActivity.this, Login.class);
-                        loginIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        finish();
-                        startActivity(loginIntent);
+                    Log.e("ForumMainActivity:", "User was null so directed to Login activity");
+                    Intent loginIntent = new Intent(MainActivity.this, Login.class);
+                    loginIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    finish();
+                    startActivity(loginIntent);
 
 
 
@@ -82,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onStop() {
         super.onStop();
-        if (mAuthListener != null) {
+        if (mAuthListener != null ) {
             mAuth.removeAuthStateListener(mAuthListener);
         }
     }

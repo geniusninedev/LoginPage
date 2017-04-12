@@ -206,7 +206,7 @@ public class SignUp extends AppCompatActivity {
 
     private void sendEmailVerification() {
         // Disable button
-        findViewById(R.id.btn_user_sign_up).setEnabled(false);
+       findViewById(R.id.btn_user_sign_up).setEnabled(false);
        // Toast.makeText(SignUp.this, "Verification email sent to " + user.getEmail(), Toast.LENGTH_SHORT).show();
         // Send verification email
         // [START send_email_verification]
@@ -220,13 +220,10 @@ public class SignUp extends AppCompatActivity {
 
                 if (task.isSuccessful()) {
                     Toast.makeText(SignUp.this,
-                            "Verification email sent to " + user.getEmail(),
-                            Toast.LENGTH_LONG).show();
+                            "Verification email sent to " + user.getEmail(), Toast.LENGTH_LONG).show();
                 } else {
                     Log.e(TAG, "sendEmailVerification", task.getException());
-                    Toast.makeText(SignUp.this,
-                            "Failed to send verification email.",
-                            Toast.LENGTH_SHORT).show();
+                    Toast.makeText(SignUp.this, "Failed to send verification email.", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -243,7 +240,7 @@ public class SignUp extends AppCompatActivity {
 
         String userEmail = email.getText().toString();
 
-        if (TextUtils.isEmpty(userEmail)) {
+        if (TextUtils.isEmpty(userEmail) ) {
             email.setError("Required.");
             valid = false;
         } else {
